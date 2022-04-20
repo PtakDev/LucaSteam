@@ -11,7 +11,7 @@ import modelo.Juego;
 public class Test {
 
 	public static void main(String[] args) {
-		//Test 02
+
 		//TEST de la creacion de juegos leyendo el fichro CSV y listando les en una ArrayList.
 		String line = "";
 		String splitBy = ",";
@@ -21,7 +21,7 @@ public class Test {
 			BufferedReader br = new BufferedReader(new FileReader(".\\datos\\vgsales.csv"));
 			while ((line = br.readLine()) != null) // returns a Boolean value
 			{
-				//String[] juego = line.split(splitBy); // use comma as separator
+				String[] juego = line.split(splitBy); // use comma as separator
 				Juego videojuego = new Juego(Integer.parseInt(juego[0]), juego[1], juego[2], Integer.parseInt(juego[3]),
 						juego[4], juego[5]);
 				listajuegos.add(videojuego);
@@ -34,8 +34,7 @@ public class Test {
 		for (Juego juego:listajuegos) {
 			System.out.println(juego);
 		}
-		
-		//Comentario de prueba 2
+
 	}
 	
 
