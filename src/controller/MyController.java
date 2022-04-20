@@ -14,6 +14,7 @@ public class MyController {
 	listadojuegos = juegoservice.cargar_datos(); //Llamamos el metodo y cargamam
 	juegoservice.listar_todos_juegos();
 	juegoservice.anadir_juego(); 
+	juegoservice.listar_juegos_genero_plataforma();
 	}
 
 }

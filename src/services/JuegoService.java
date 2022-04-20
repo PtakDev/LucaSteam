@@ -33,7 +33,11 @@ public class JuegoService implements IJuegoService {
 
 	@Override
 	public void listar_juegos_genero_plataforma() {
-		// TODO Auto-generated method stub
+		for (Juego game : listajuegos) {
+			if (game.getGenero().equals("Platform")) {
+				System.out.println(game);
+			}
+		}
 
 	}
 
