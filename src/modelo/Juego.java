@@ -8,6 +8,7 @@ public class Juego {
 	private String genero;
 	private String editor;
 	
+	
 	public Juego() {
 		super();
 		// TODO Auto-generated constructor stub
