@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import interfaces.IJuegoService;
 import modelo.Juego;
@@ -11,10 +12,23 @@ import modelo.Juego;
 public class JuegoService implements IJuegoService {
 
 	ArrayList<Juego> listajuegos = new ArrayList<Juego>();
+
 	@Override
 	public void anadir_juego() {
-		// TODO Auto-generated method stub
-
+		try (// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in)) {
+			System.out.println("Añadiendo juego");
+			Juego juego = new Juego();
+			juego.setRango(listajuegos.size()+1);
+			System.out.println("Que nombre quieres ponerle? ");
+			juego.setNombre(input.nextLine());
+			System.out.println("Para que plataforma es? ");
+			juego.setPlataforma(input.nextLine());
+//			this.plataforma = plataforma;
+//			this.anio = anio;
+//			this.genero = genero;
+//			this.editor = editor;
+		}
 	}
 
 	@Override
@@ -25,7 +39,7 @@ public class JuegoService implements IJuegoService {
 
 	@Override
 	public void listar_todos_juegos() {
-		for (Juego j: listajuegos) {
+		for (Juego j : listajuegos) {
 			System.out.println(j);
 		}
 
@@ -48,9 +62,9 @@ public class JuegoService implements IJuegoService {
 
 		} catch (IOException e) {
 			e.printStackTrace();
-			
+
 		}
-		
+
 		return listajuegos;
 	}
 

@@ -13,6 +13,7 @@ public class MyController {
 	ArrayList<Juego> listadojuegos = new ArrayList<Juego>(); //Creamos una lista vacia para guardar los objectos Juego 
 	listadojuegos = juegoservice.cargar_datos(); //Llamamos el metodo y cargamam
 	juegoservice.listar_todos_juegos();
+	juegoservice.anadir_juego(); 
 	}
 
 }
