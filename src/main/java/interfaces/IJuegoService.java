@@ -1,13 +1,13 @@
-package interfaces;
+package main.java.interfaces;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import modelo.Juego;
+import main.java.modelo.Juego;
 
 public interface IJuegoService {
 
-	public void anadir_juego(Scanner input);
+	public int anadir_juego(Scanner input);
 
 	public void listar_juegos_genero_plataforma();
 

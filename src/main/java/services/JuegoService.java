@@ -1,4 +1,4 @@
-package services;
+package main.java.services;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,15 +6,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import interfaces.IJuegoService;
-import modelo.Juego;
+import main.java.interfaces.IJuegoService;
+import main.java.modelo.Juego;
 
 public class JuegoService implements IJuegoService {
 
 	ArrayList<Juego> listajuegos = new ArrayList<Juego>();
 
 	@Override
-	public void anadir_juego(Scanner input) {
+	public int anadir_juego(Scanner input) {
 		Juego juego = new Juego();
 		// Automaticamente le pongo el ultimo rango
 		juego.setRango(listajuegos.size() + 1);
@@ -31,6 +31,7 @@ public class JuegoService implements IJuegoService {
 		System.out.println("¿Cual es el editor? ");
 		juego.setEditor(input.nextLine());
 		listajuegos.add(juego);
+		return 1;
 	}
 
 	@Override

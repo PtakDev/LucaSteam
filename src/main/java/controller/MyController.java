@@ -1,11 +1,11 @@
-package controller;
+package main.java.controller;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import interfaces.IJuegoService;
-import modelo.Juego;
-import services.JuegoService;
+import main.java.interfaces.IJuegoService;
+import main.java.modelo.Juego;
+import main.java.services.JuegoService;
 
 public class MyController {
 
