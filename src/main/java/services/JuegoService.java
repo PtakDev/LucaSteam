@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
@@ -26,7 +27,13 @@ public class JuegoService implements IJuegoService {
 		System.out.println("¿Para que plataforma es? ");
 		juego.setPlataforma(input.nextLine());
 		System.out.println("¿En que año se publico? ");
+		try {
 		juego.setAnio(input.nextInt());
+		}catch (InputMismatchException e) {
+		    System.err.println("Solo aceptamos numeros");
+		    input.nextLine();
+		    return 0;
+		}
 		input.nextLine();
 		System.out.println("¿De que genero es? ");
 		juego.setGenero(input.nextLine());
@@ -35,7 +42,18 @@ public class JuegoService implements IJuegoService {
 		listajuegos.add(juego);
 		return 1;
 	}
-
+	
+	@Override
+	public int anadir_juego(Juego juego) {
+		if(juego==null)
+			return 2;
+		else if(juego.getRango()!=listajuegos.size() + 1)
+			return 3;
+		else {
+			listajuegos.add(juego);
+			return 1;
+		}
+	}
 	@Override
 	public void listar_juegos_genero_plataforma() {
 		for (Juego game : listajuegos) {
