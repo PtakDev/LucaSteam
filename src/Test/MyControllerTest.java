@@ -19,6 +19,10 @@ public class MyControllerTest {
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
+	
+	@Test
+	public static void assertArrayEquals(listajuegos [i],actual[i])
+	}
 
 	@Before
 	public void setUp() throws Exception {
