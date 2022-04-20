@@ -33,9 +33,6 @@ public class JuegoService implements IJuegoService {
 		System.out.println("¿Cual es el editor? ");
 		juego.setEditor(input.nextLine());
 		listajuegos.add(juego);
-		String archCSV = "D:\\ISO-Codes.csv";
-		CSVWriter writer = new CSVWriter(new FileWriter(archCSV));
-		writer.writeNext(pais);
 		return 1;
 	}
 
