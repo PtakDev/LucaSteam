@@ -7,8 +7,7 @@ public class Juego {
 	private int anio;
 	private String genero;
 	private String editor;
-	
-	
+
 	public Juego() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -77,7 +76,5 @@ public class Juego {
 		return "Juego [rango=" + rango + ", nombre=" + nombre + ", plataforma=" + plataforma + ", anio=" + anio
 				+ ", genero=" + genero + ", editor=" + editor + "]";
 	}
-	
 
-	
 }

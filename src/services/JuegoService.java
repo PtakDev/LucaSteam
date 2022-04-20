@@ -14,21 +14,23 @@ public class JuegoService implements IJuegoService {
 	ArrayList<Juego> listajuegos = new ArrayList<Juego>();
 
 	@Override
-	public void anadir_juego() {
-		try (// TODO Auto-generated method stub
-		Scanner input = new Scanner(System.in)) {
-			System.out.println("Añadiendo juego");
-			Juego juego = new Juego();
-			juego.setRango(listajuegos.size()+1);
-			System.out.println("Que nombre quieres ponerle? ");
-			juego.setNombre(input.nextLine());
-			System.out.println("Para que plataforma es? ");
-			juego.setPlataforma(input.nextLine());
-//			this.plataforma = plataforma;
-//			this.anio = anio;
-//			this.genero = genero;
-//			this.editor = editor;
-		}
+	public void anadir_juego(Scanner input) {
+		Juego juego = new Juego();
+		// Automaticamente le pongo el ultimo rango
+		juego.setRango(listajuegos.size() + 1);
+		System.out.println("¿Que nombre quieres ponerle? ");
+		input.nextLine();
+		juego.setNombre(input.nextLine());
+		System.out.println("¿Para que plataforma es? ");
+		juego.setPlataforma(input.nextLine());
+		System.out.println("¿En que año se publico? ");
+		juego.setAnio(input.nextInt());
+		input.nextLine();
+		System.out.println("¿De que genero es? ");
+		juego.setGenero(input.nextLine());
+		System.out.println("¿Cual es el editor? ");
+		juego.setEditor(input.nextLine());
+		listajuegos.add(juego);
 	}
 
 	@Override
