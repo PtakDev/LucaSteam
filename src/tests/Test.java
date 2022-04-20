@@ -11,7 +11,7 @@ import modelo.Juego;
 public class Test {
 
 	public static void main(String[] args) {
-		
+		//Test 02
 		//TEST de la creacion de juegos leyendo el fichro CSV y listando les en una ArrayList.
 		String line = "";
 		String splitBy = ",";
