@@ -10,6 +10,7 @@ import modelo.Juego;
 
 public class JuegoService implements IJuegoService {
 
+	ArrayList<Juego> listajuegos = new ArrayList<Juego>();
 	@Override
 	public void anadir_juego() {
 		// TODO Auto-generated method stub
@@ -24,7 +25,9 @@ public class JuegoService implements IJuegoService {
 
 	@Override
 	public void listar_todos_juegos() {
-		// TODO Auto-generated method stub
+		for (Juego j: listajuegos) {
+			System.out.println(j);
+		}
 
 	}
 
@@ -32,7 +35,6 @@ public class JuegoService implements IJuegoService {
 	public ArrayList<Juego> cargar_datos() {
 		String line = "";
 		String splitBy = ",";
-		ArrayList<Juego> listajuegos = new ArrayList<Juego>();
 		try {
 			// parsing a CSV file into BufferedReader class constructor
 			BufferedReader br = new BufferedReader(new FileReader(".\\datos\\vgsales.csv"));
