@@ -8,7 +8,7 @@ import modelo.Juego;
 public interface IJuegoService {
 	public ArrayList<Juego> cargar_datos();
 
-	public void anadir_juego(Scanner input);
+	public int anadir_juego(Scanner input);
 
 	public void listar_juegos_genero_plataforma();
 
