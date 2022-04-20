@@ -1,9 +1,8 @@
 package test.java.services;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import main.java.interfaces.IJuegoService;
@@ -13,16 +12,16 @@ import main.java.services.JuegoService;
 public class JuegoServiceTest {
 
 	IJuegoService juegoservice = new JuegoService();
+	ArrayList<Juego> listajuegos = new ArrayList<Juego>();
+
 	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testlistar_todos_juegos() {
+		for (Juego j : listajuegos) {
+			Assert.assertNotNull("No hay valor NULL",j);
+		}
+
 	}
 	
-	@Test
-	public void testistar_todos_juegos() {
-		ArrayList<Juego> listajuegos = new ArrayList<Juego>();
-		assertNotNull("Ver que no hay valores NULL", listajuegos);
-	}
 
 }

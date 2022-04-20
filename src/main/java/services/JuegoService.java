@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 
 import main.java.interfaces.IJuegoService;
 import main.java.modelo.Juego;
@@ -31,6 +33,9 @@ public class JuegoService implements IJuegoService {
 		System.out.println("¿Cual es el editor? ");
 		juego.setEditor(input.nextLine());
 		listajuegos.add(juego);
+		String archCSV = "D:\\ISO-Codes.csv";
+		CSVWriter writer = new CSVWriter(new FileWriter(archCSV));
+		writer.writeNext(pais);
 		return 1;
 	}
 
