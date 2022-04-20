@@ -1,4 +1,4 @@
-package modelo;
+package main.java.modelo;
 
 public class Juego {
 	private int rango;
