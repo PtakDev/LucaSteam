@@ -52,12 +52,12 @@ public class JuegoService implements IJuegoService {
 	}
 
 	@Override
-	public ArrayList<Juego> cargar_datos() {
+	public ArrayList<Juego> cargar_datos(String ruta_fichero) {
 		String line = "";
 		String splitBy = ",";
 		try {
 			// parsing a CSV file into BufferedReader class constructor
-			BufferedReader br = new BufferedReader(new FileReader(".\\datos\\vgsales.csv"));
+			BufferedReader br = new BufferedReader(new FileReader(ruta_fichero));
 			while ((line = br.readLine()) != null) // returns a Boolean value
 			{
 				String[] juego = line.split(splitBy); // use comma as separator

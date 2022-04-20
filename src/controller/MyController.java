@@ -13,7 +13,7 @@ public class MyController {
 		IJuegoService juegoservice = new JuegoService(); // Crear una instancia de la clase JuegoService
 		ArrayList<Juego> listadojuegos = new ArrayList<Juego>(); // Creamos una lista vacia para guardar los objectos
 																	// Juego
-		listadojuegos = juegoservice.cargar_datos(); // Llamamos el metodo y carga los datos al array
+		listadojuegos = juegoservice.cargar_datos(".\\datos\\vgsales.csv"); // Llamamos el metodo y carga los datos al array
 		boolean seguir = true;
 		int opcion = 0;
 		try (Scanner sc = new Scanner(System.in)) {
