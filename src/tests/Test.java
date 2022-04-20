@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import modelo.Juego;
 
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class Test {
 		ArrayList<Juego> listajuegos = new ArrayList<Juego>();
 		try {
 			// parsing a CSV file into BufferedReader class constructor
-			BufferedReader br = new BufferedReader(new FileReader(".\\src\\vgsales.csv"));
+			BufferedReader br = new BufferedReader(new FileReader(".\\datos\\vgsales.csv"));
 			while ((line = br.readLine()) != null) // returns a Boolean value
 			{
 				String[] juego = line.split(splitBy); // use comma as separator

@@ -14,7 +14,5 @@ public class MyController {
 	listadojuegos = juegoservice.cargar_datos(); //Llamamos el metodo y cargamam
 	
 	}
-	
-	
 
 }
