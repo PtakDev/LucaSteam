@@ -19,9 +19,7 @@ public class JuegoService implements IJuegoService {
 	@Override
 	public void listar_todos_juegos() {
 		// TODO Auto-generated method stub
-//prueba de cambios
-		//prueba
-		//sdfsfdfsdf
+
 	}
 
 	@Override
