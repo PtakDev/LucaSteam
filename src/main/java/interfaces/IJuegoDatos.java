@@ -11,10 +11,10 @@ public interface IJuegoDatos {
 	public boolean anadir_juego(Juego juego);
 
 	public ArrayList<Juego> listar_juegos_genero_plataforma();
+	public ArrayList<Juego> listar_juegos_pub_Nintendo();
 
 	public ArrayList<Juego> listar_todos_juegos();
 
 	public ArrayList<Juego> cargar_datos(String ruta_fichero);
-	public ArrayList<Juego> getListajuegos();
 
 }

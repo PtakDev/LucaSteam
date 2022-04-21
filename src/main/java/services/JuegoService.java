@@ -16,7 +16,7 @@ public class JuegoService {
 	}
 
 	public ArrayList<Juego> listar_todos_juegos() {
-		return juegodatos.getListajuegos();
+		return juegodatos.listar_todos_juegos();
 	}
 
 	public ArrayList<Juego> listar_juegos_genero_plataforma() {
@@ -25,6 +25,10 @@ public class JuegoService {
 
 	public ArrayList<Juego> anadir_juego() {
 		return juegodatos.anadir_juego();
+	}
+	
+	public ArrayList<Juego> listar_juegos_pub_Nintendo() {
+		return juegodatos.listar_juegos_pub_Nintendo();
 	}
 
 }

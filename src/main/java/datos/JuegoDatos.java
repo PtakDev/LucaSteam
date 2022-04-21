@@ -17,10 +17,6 @@ public class JuegoDatos implements IJuegoDatos {
 		return listajuegos;
 	}
 
-	public ArrayList<Juego> getListajuegos() {
-		return listajuegos;
-	}
-
 	@Override
 	public boolean anadir_juego(Juego juego) {
 		if (juego == null)
@@ -40,6 +36,11 @@ public class JuegoDatos implements IJuegoDatos {
 
 	@Override
 	public ArrayList<Juego> listar_todos_juegos() {
+		return listajuegos;
+	}
+	
+	@Override
+	public ArrayList<Juego> listar_juegos_pub_Nintendo() {
 		return listajuegos;
 	}
 
@@ -65,4 +66,5 @@ public class JuegoDatos implements IJuegoDatos {
 
 		return listajuegos;
 	}
+
 }
