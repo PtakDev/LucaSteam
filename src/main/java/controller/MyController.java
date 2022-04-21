@@ -40,30 +40,7 @@ public class MyController {
 					}
 					break;
 				case 3:
-					Juego juego = new Juego();
-					// Automaticamente le pongo el ultimo rango
-					juego.setRango(juegosService.anadir_juego().size() + 1);
-					System.out.println("¿Que nombre quieres ponerle? ");
-					sc.nextLine();
-					juego.setNombre(sc.nextLine());
-					System.out.println("¿Para que plataforma es? ");
-					juego.setPlataforma(sc.nextLine());
-					System.out.println("¿En que año se publico? ");
-					try {
-						juego.setAnio(sc.nextInt());
-					} catch (InputMismatchException e) {
-						System.err.println("Solo aceptamos numeros");
-						sc.nextLine();
-					}
-					sc.nextLine();
-					System.out.println("¿De que genero es? ");
-					juego.setGenero(sc.nextLine());
-					System.out.println("¿Cual es el editor? ");
-					juego.setEditor(sc.nextLine());
-					juegosService.anadir_juego().add(juego);
-				
-					//juegosService.anadir_juego(juego);
-					
+					juegosService.anadir_juego(sc);
 					break;
 				default:
 					System.out.println("Opcion incorrecta. Marca una nueva opcion.");

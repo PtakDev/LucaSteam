@@ -1,6 +1,7 @@
 package main.java.services;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import main.java.datos.JuegoDatos;
 import main.java.interfaces.IJuegoDatos;
@@ -16,15 +17,15 @@ public class JuegoService {
 	}
 
 	public ArrayList<Juego> listar_todos_juegos() {
-		return juegodatos.getListajuegos();
+		return juegodatos.listar_todos_juegos();
 	}
 
 	public ArrayList<Juego> listar_juegos_genero_plataforma() {
 		return juegodatos.listar_juegos_genero_plataforma();
 	}
 
-	public ArrayList<Juego> anadir_juego() {
-		return juegodatos.anadir_juego();
+	public boolean anadir_juego(Scanner sc) {
+		return juegodatos.anadir_juego(juegodatos.crear_juego(sc));
 	}
 
 }
