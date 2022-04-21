@@ -7,7 +7,7 @@ import main.java.services.JuegoService;
 
 public class MyController {
 
-	JuegoService juegosService = new JuegoService();
+	private JuegoService juegosService = new JuegoService();
 
 	public void menu() {
 		// Recojo datos
@@ -28,15 +28,14 @@ public class MyController {
 				System.out.println("11 - Aniadir un juego");
 				System.out.println("12 - Editar un juego");
 				System.out.println("13 - Eliminar un juego");
+
 				opcion = sc.nextInt();
 				switch (opcion) {
 				case 0:
 					seguir = false;
 					break;
 				case 1:
-					for (Juego j : juegosService.listar_todos_juegos()) {
-						System.out.println(j);
-					}
+					juegosService.listar_todos_juegos();
 					break;
 				case 2:
 					for (Juego game : juegosService.listar_juegos_genero_plataforma()) {
@@ -45,24 +44,27 @@ public class MyController {
 						}
 					}
 					break;
+         
 				case 4:
 					for (Juego j : juegosService.listar_juegos_pub_Nintendo()) {
 						if (j.getEditor().equals("Nintendo")) {
 							System.out.println(j);
 						}
+
 					}
 				case 6:
 					juegosService.printListadoEditores();
 					break;
+					
 				case 7:
 					for (Juego game : juegosService.listado_juego_sigloXX()) {
-						if (game.getAnio() > 1899 && game.getAnio() < 2000) {
+						if (game.getAnio() > 1899 && game.getAnio() < 2001) {
 							System.out.println(game);
 						}
 					}
 					break;
 				case 8:
-					System.out.println("¿Que genero quieres? ");
+					System.out.println("Que genero quieres? ");
 					sc.nextLine();
 					String tipo = sc.nextLine();
 					for (Juego game : juegosService.listar_juegos_genero()) {
@@ -81,12 +83,10 @@ public class MyController {
 					break;
 				case 13:
 					juegosService.eliminar_juego(sc);
-					break;
 				default:
 					System.out.println("Opcion incorrecta. Marca una nueva opcion.");
 				}
 			}
 		}
 	}
-
 }

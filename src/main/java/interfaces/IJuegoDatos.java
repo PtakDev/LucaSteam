@@ -10,8 +10,10 @@ public interface IJuegoDatos {
 	public ArrayList<Juego> cargar_datos(String ruta_fichero);
 
 	public ArrayList<Juego> listar_juegos_genero_plataforma();
+  
+	public ArrayList<Juego> listar_juegos_pub_Nintendo();
 
-	public ArrayList<Juego> listar_todos_juegos();
+	public void listar_todos_juegos();
 
 	public ArrayList<Juego> listar_juegos_genero();
 
@@ -19,7 +21,6 @@ public interface IJuegoDatos {
 
 	public ArrayList<Juego> listado_juego_sigloXX();
 
-	public ArrayList<Juego> listar_juegos_pub_Nintendo();
 
 	public ArrayList<String> listadoEditores();
 
