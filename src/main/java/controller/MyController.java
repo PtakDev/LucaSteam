@@ -3,17 +3,18 @@ package main.java.controller;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import main.java.datos.JuegoDatos;
 import main.java.interfaces.IJuegoService;
 import main.java.modelo.Juego;
 import main.java.services.JuegoService;
 
 public class MyController {
-
-	public static void main(String[] args) {
-		IJuegoService juegoservice = new JuegoService(); // Crear una instancia de la clase JuegoService
-		ArrayList<Juego> listadojuegos = new ArrayList<Juego>(); // Creamos una lista vacia para guardar los objectos
-																	// Juego
-		listadojuegos = juegoservice.cargar_datos(".\\datos\\vgsales.csv"); // Llamamos el metodo y carga los datos al array
+ 
+	JuegoDatos juegosdatos=new JuegoDatos();
+	IJuegoService juegoservice = new JuegoService();
+	public void menu() {
+		juegosdatos.recoger_datos();
+		
 		boolean seguir = true;
 		int opcion = 0;
 		try (Scanner sc = new Scanner(System.in)) {
@@ -42,5 +43,6 @@ public class MyController {
 			}
 		}
 	}
-
+	
 }
+
