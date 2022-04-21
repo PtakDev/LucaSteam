@@ -19,7 +19,6 @@ public interface IJuegoDatos {
 	public ArrayList<Juego> listado_juego_sigloXX();
 	public ArrayList<Juego> listado_juegos_aniospares();
 	public ArrayList<Juego> listar_juegos_genero();
-	public ArrayList<Juego> getListajuegos();
 	public ArrayList<String> listadoEditores();
 
 }
