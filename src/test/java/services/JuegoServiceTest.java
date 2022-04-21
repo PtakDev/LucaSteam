@@ -111,31 +111,49 @@ public class JuegoServiceTest {
 		juego.setNombre("Antonio");
 		Assert.assertEquals(juego.getNombre(), "Antonio");
 	}
-	
+
 	@Test
-	public void test_comprobar_anios() {
+	public void test_comprobar_plataforma() {
 		boolean comprobar=true;
-		 
-		for (Juego game: juegoDatos.listado_juegos_aniospares()) {//given
-			if(game.getAnio() %2!=0) {//when
+		for (Juego game: juegoDatos.listar_juegos_genero_plataforma()) {//given
+			if(!game.getGenero().equals("Platform")) {//when
 				comprobar=false;
 			}
-		
 		}
 		Assert.assertTrue(comprobar);//then
 		
+	}
+	
+	@Test
+	public void test_comprobar_sigoxx() {
+		boolean comprobar=true;
+		for (Juego game: juegoDatos.listado_juego_sigloXX()) {//given
+			if (game.getAnio() < 1899 && game.getAnio() > 2000) {//when
+				comprobar=false;
+			}
+		}
+		Assert.assertTrue(comprobar);//then
+
+	}
+	
+	@Test
+	public void test_comprobar_anios() {
+		boolean comprobar = true;
+
+		for (Juego game : juegoDatos.listado_juegos_aniospares()) {// given
+			if (game.getAnio() % 2 != 0) {// when
+				comprobar = false;
+			}
+
+		}
+		Assert.assertTrue(comprobar);// then
+
 	}
 
 	@Test
 	public void test_nombre_juego_null() {
 		juego.setNombre(null);
 		Assert.assertEquals(juego.getNombre(), null);
-	}
-
-	@Test
-	public void test_editor_juego() {
-		juego.setEditor("Nintendo");
-		Assert.assertEquals(juego.getEditor(), "Nintendo");
 	}
 
 	
@@ -196,6 +214,31 @@ public class JuegoServiceTest {
 
 	}
 
-	
+	@Test
+	public void test_obtener_listado_Nintendo() {
+		// Given ("Una funci�n que nos saca una lista de genero por plataforma"):
+		boolean comprobar = true;
+		for (Juego j : juegoDatos.listar_juegos_genero_plataforma())
+			// When ("Cuando el editor es Nintendo est� Ok"):
+			if (j.getEditor() != "Nintendo") {
+				comprobar = false;
+			}
+		// Then ("Obtengo los valores de true"):
+		Assert.assertTrue("El metodo es correcto", comprobar);
+	}
+
+	@Test
+	public void test_listar_juegos_siglo_XX() {
+		//Given:
+		boolean comprobar = true;
+		for (Juego j : juegoDatos.listado_juego_sigloXX()) {// given
+			//When:
+			if (j.getAnio() < 1899 && j.getAnio() > 2000) {// when
+				comprobar = false;
+			}
+			//Then:
+		}
+		Assert.assertTrue("El m�todo te lista los juegos del Siglo XX",comprobar);
+	}
 
 }

@@ -7,7 +7,7 @@ import main.java.datos.JuegoDatos;
 import main.java.interfaces.IJuegoDatos;
 import main.java.modelo.Juego;
 
-public class JuegoService {
+public class JuegoService implements IJuegoService {
 
 	IJuegoDatos juegodatos = new JuegoDatos();// Crear una instancia de la clase JuegoDatos
 
@@ -17,33 +17,46 @@ public class JuegoService {
 	}
 
 	public void listar_todos_juegos() {
-		juegodatos.listar_todos_juegos();
-	}
 
-	public ArrayList<Juego> listar_juegos_genero_plataforma() {
-		return juegodatos.listar_juegos_genero_plataforma();
+		for (Juego j : juegodatos.listar_todos_juegos()) {
+			System.out.println(j);
+		}
+
+
+	public void listar_juegos_genero_plataforma() {
+		for(Juego game:juegodatos.listar_juegos_genero_plataforma()) {
+			System.out.println(game);
+		}
+		
 	}
 	
-	public ArrayList<Juego> listado_juego_sigloXX() {
-		return juegodatos.listado_juego_sigloXX();
+	public void listado_juego_sigloXX() {
+		for(Juego game:juegodatos.listado_juego_sigloXX()) {
+			System.out.println(game);
+		}
+		
 	}
 	
-	public ArrayList<Juego> listado_juegos_aniospares() {
-		return juegodatos.listado_juegos_aniospares();
+	public void listado_juegos_aniospares() {
+		for(Juego game:juegodatos.listado_juegos_aniospares()) {
+			System.out.println(game);
+		}
 	}
 	
-	public ArrayList<Juego> listar_juegos_genero(){
-		return juegodatos.listar_juegos_genero();
+	public void listar_juegos_genero(Scanner sc){
+		for (Juego j : juegodatos.listar_juegos_genero(sc)) {
+			System.out.println(j);
+		}
 	}
 
 	public void printListadoEditores(){
 		System.out.println(juegodatos.listadoEditores());
 	}
 
-
-	public ArrayList<Juego> listar_juegos_pub_Nintendo() {
-		return juegodatos.listar_juegos_pub_Nintendo();
-	}
+	public void listar_juegos_pub_Nintendo() {
+		for (Juego j : juegodatos.listar_juegos_pub_Nintendo()) {
+			System.out.println(j);}
+		}
 	
 	public boolean anadir_juego(Scanner sc) {
 		return juegodatos.anadir_juego(juegodatos.crear_juego(sc));
