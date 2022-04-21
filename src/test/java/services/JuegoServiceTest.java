@@ -58,6 +58,30 @@ public class JuegoServiceTest {
 	}
 	
 	@Test
+	public void test_comprobar_plataforma() {
+		boolean comprobar=true;
+		for (Juego game: juegoDatos.listar_juegos_genero_plataforma()) {//given
+			if(!game.getGenero().equals("Platform")) {//when
+				comprobar=false;
+			}
+		}
+		Assert.assertTrue(comprobar);//then
+		
+	}
+	
+	@Test
+	public void test_comprobar_sigoxx() {
+		boolean comprobar=true;
+		for (Juego game: juegoDatos.listado_juego_sigloXX()) {//given
+			if (game.getAnio() < 1899 && game.getAnio() > 2000) {//when
+				comprobar=false;
+			}
+		}
+		Assert.assertTrue(comprobar);//then
+
+	}
+	
+	@Test
 	public void test_comprobar_anios() {
 		boolean comprobar=true;
 		 

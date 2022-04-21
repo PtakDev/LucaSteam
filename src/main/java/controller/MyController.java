@@ -39,11 +39,7 @@ public class MyController {
 					}
 					break;
 				case 2:
-					for (Juego game : juegosService.listar_juegos_genero_plataforma()) {
-						if (game.getGenero().equals("Platform")) {
-							System.out.println(game);
-						}
-					}
+					juegosService.listar_juegos_genero_plataforma();
 					break;
 				case 4:
 					for (Juego j : juegosService.listar_juegos_pub_Nintendo()) {
@@ -51,15 +47,12 @@ public class MyController {
 							System.out.println(j);
 						}
 					}
+					break;
 				case 6:
 					juegosService.printListadoEditores();
 					break;
 				case 7:
-					for (Juego game : juegosService.listado_juego_sigloXX()) {
-						if (game.getAnio() > 1899 && game.getAnio() < 2000) {
-							System.out.println(game);
-						}
-					}
+					juegosService.listado_juego_sigloXX();
 					break;
 				case 8:
 					System.out.println("¿Que genero quieres? ");
@@ -73,6 +66,7 @@ public class MyController {
 					break;
 				case 9:
 					juegosService.listado_juegos_aniospares();
+					break;
 				case 11:
 					juegosService.anadir_juego(sc);
 					break;

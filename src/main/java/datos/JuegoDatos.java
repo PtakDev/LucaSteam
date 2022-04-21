@@ -40,7 +40,13 @@ public class JuegoDatos implements IJuegoDatos {
 
 	@Override
 	public ArrayList<Juego> listar_juegos_genero_plataforma() {
-		return listajuegos;
+		ArrayList<Juego> listajuegosplataforma = new ArrayList<Juego>();
+		for (Juego game : listajuegos) {
+			if (game.getGenero().equals("Platform")) {
+				listajuegosplataforma.add(game);
+			}
+		}
+		return listajuegosplataforma;
 	}
 
 	@Override
@@ -49,7 +55,13 @@ public class JuegoDatos implements IJuegoDatos {
 	}
 
 	public ArrayList<Juego> listado_juego_sigloXX() {
-		return listajuegos;
+		ArrayList<Juego> listajuegossigoxx = new ArrayList<Juego>();
+		for (Juego game : listajuegos) {
+			if (game.getAnio() > 1899 && game.getAnio() < 2000) {
+				listajuegossigoxx.add(game);
+			}
+		}
+		return listajuegossigoxx;
 	}
 
 	@Override
