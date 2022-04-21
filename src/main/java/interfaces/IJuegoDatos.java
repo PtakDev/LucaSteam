@@ -18,6 +18,6 @@ public interface IJuegoDatos {
 	public ArrayList<Juego> cargar_datos(String ruta_fichero);
 
 	public ArrayList<Juego> getListajuegos();
-	public ArrayList<String> getListadoEditores();
+	public ArrayList<String> listadoEditores();
 
 }
