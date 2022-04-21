@@ -20,23 +20,21 @@ public class MyController {
 				System.out.println("Elige una opcion:");
 				System.out.println("1 - Listado de todos los juegos");
 				System.out.println("2 - Listado de todos los juegos de genero plataforma");
-				System.out.println("4 - Listado de todos los juegos por publisher Nintendo");
-				System.out.println("6 - Listado de todos los editores");
-				System.out.println("7 - Listar todos los juegos del siglo XX");
-				System.out.println("8 - Listar todos los juegos por genero");
-				System.out.println("9 - Listar todos los juegos por anios pares");
-				System.out.println("11 - Aniadir un juego");
-				System.out.println("12 - Editar un juego");
-				System.out.println("13 - Eliminar un juego");
+				System.out.println("3 - Listado de todos los juegos por publisher Nintendo");
+				System.out.println("4 - Listado de todos los editores");
+				System.out.println("5 - Listar todos los juegos del siglo XX");
+				System.out.println("6 - Listar todos los juegos por genero");
+				System.out.println("7 - Listar todos los juegos por anios pares");
+				System.out.println("8 - Aniadir un juego");
+				System.out.println("9 - Editar un juego");
+				System.out.println("10 - Eliminar un juego");
 				opcion = sc.nextInt();
 				switch (opcion) {
 				case 0:
 					seguir = false;
 					break;
 				case 1:
-					for (Juego j : juegosService.listar_todos_juegos()) {
-						System.out.println(j);
-					}
+					juegosService.listar_todos_juegos();
 					break;
 				case 2:
 					for (Juego game : juegosService.listar_juegos_genero_plataforma()) {
@@ -45,41 +43,31 @@ public class MyController {
 						}
 					}
 					break;
+				case 3:
+					juegosService.listar_juegos_pub_Nintendo();
+					break;
 				case 4:
-					for (Juego j : juegosService.listar_juegos_pub_Nintendo()) {
-						if (j.getEditor().equals("Nintendo")) {
-							System.out.println(j);
-						}
-					}
-				case 6:
 					juegosService.printListadoEditores();
 					break;
-				case 7:
+				case 5:
 					for (Juego game : juegosService.listado_juego_sigloXX()) {
 						if (game.getAnio() > 1899 && game.getAnio() < 2000) {
 							System.out.println(game);
 						}
 					}
 					break;
-				case 8:
-					System.out.println("¿Que genero quieres? ");
-					sc.nextLine();
-					String tipo = sc.nextLine();
-					for (Juego game : juegosService.listar_juegos_genero()) {
-						if (game.getGenero().equals(tipo)) {
-							System.out.println(game);
-						}
-					}
+				case 6:
+					juegosService.listar_juegos_genero(sc);
 					break;
-				case 9:
+				case 7:
 					juegosService.listado_juegos_aniospares();
-				case 11:
+				case 8:
 					juegosService.anadir_juego(sc);
 					break;
-				case 12:
+				case 9:
 					juegosService.editar_juego(sc);
 					break;
-				case 13:
+				case 10:
 					juegosService.eliminar_juego(sc);
 					break;
 				default:
