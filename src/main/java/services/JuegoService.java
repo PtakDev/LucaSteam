@@ -19,12 +19,12 @@ public class JuegoService {
 		return juegodatos.getListajuegos();
 	}
 
-//	public ArrayList<Juego> listar_juegos_genero_plataforma() {
-//		return listajuegos;
-//	}
-//	
-//	public ArrayList<Juego> anadir_juego() {
-//		return listajuegos;
-//	}
+	public ArrayList<Juego> listar_juegos_genero_plataforma() {
+		return juegodatos.listar_juegos_genero_plataforma();
+	}
+
+	public ArrayList<Juego> anadir_juego() {
+		return juegodatos.anadir_juego();
+	}
 
 }

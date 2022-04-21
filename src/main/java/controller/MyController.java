@@ -1,5 +1,6 @@
 package main.java.controller;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import main.java.modelo.Juego;
@@ -32,37 +33,37 @@ public class MyController {
 					}
 					break;
 				case 2:
-//					for (Juego game : juegosdatos.listar_juegos_genero_plataforma()) {
-//						if (game.getGenero().equals("Platform")) {
-//							System.out.println(game);
-//						}
-//					}
+					for (Juego game : juegosService.listar_juegos_genero_plataforma()) {
+						if (game.getGenero().equals("Platform")) {
+							System.out.println(game);
+						}
+					}
 					break;
 				case 3:
-//					Juego juego = new Juego();
-//					// Automaticamente le pongo el ultimo rango
-//					juego.setRango(juegosdatos.anadir_juego().size() + 1);
-//					System.out.println("¿Que nombre quieres ponerle? ");
-//					sc.nextLine();
-//					juego.setNombre(sc.nextLine());
-//					System.out.println("¿Para que plataforma es? ");
-//					juego.setPlataforma(sc.nextLine());
-//					System.out.println("¿En que año se publico? ");
-//					try {
-//						juego.setAnio(sc.nextInt());
-//					} catch (InputMismatchException e) {
-//						System.err.println("Solo aceptamos numeros");
-//						sc.nextLine();
-//					}
-//					sc.nextLine();
-//					System.out.println("¿De que genero es? ");
-//					juego.setGenero(sc.nextLine());
-//					System.out.println("¿Cual es el editor? ");
-//					juego.setEditor(sc.nextLine());
-//					juegosdatos.anadir_juego().add(juego);
-//					///////////////////////////////
-//					juegosdatos.anadir_juego(juego);
-//					
+					Juego juego = new Juego();
+					// Automaticamente le pongo el ultimo rango
+					juego.setRango(juegosService.anadir_juego().size() + 1);
+					System.out.println("¿Que nombre quieres ponerle? ");
+					sc.nextLine();
+					juego.setNombre(sc.nextLine());
+					System.out.println("¿Para que plataforma es? ");
+					juego.setPlataforma(sc.nextLine());
+					System.out.println("¿En que año se publico? ");
+					try {
+						juego.setAnio(sc.nextInt());
+					} catch (InputMismatchException e) {
+						System.err.println("Solo aceptamos numeros");
+						sc.nextLine();
+					}
+					sc.nextLine();
+					System.out.println("¿De que genero es? ");
+					juego.setGenero(sc.nextLine());
+					System.out.println("¿Cual es el editor? ");
+					juego.setEditor(sc.nextLine());
+					juegosService.anadir_juego().add(juego);
+				
+					//juegosService.anadir_juego(juego);
+					
 					break;
 				default:
 					System.out.println("Opcion incorrecta. Marca una nueva opcion.");
