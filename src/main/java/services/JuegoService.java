@@ -26,5 +26,11 @@ public class JuegoService {
 	public ArrayList<Juego> anadir_juego() {
 		return juegodatos.anadir_juego();
 	}
+	
+	public void printListadoEditores(){
+		System.out.println(juegodatos.getListadoEditores());
+	}
+	
+	
 
 }

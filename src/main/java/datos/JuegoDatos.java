@@ -11,6 +11,7 @@ import main.java.modelo.Juego;
 public class JuegoDatos implements IJuegoDatos {
 
 	public ArrayList<Juego> listajuegos = new ArrayList<Juego>();
+	public ArrayList<String> listadoeditores = new ArrayList<String>();
 
 	@Override
 	public ArrayList<Juego> anadir_juego() {
@@ -42,6 +43,19 @@ public class JuegoDatos implements IJuegoDatos {
 	public ArrayList<Juego> listar_todos_juegos() {
 		return listajuegos;
 	}
+	
+	@Override
+	public ArrayList<String> getListadoEditores() {
+		for(Juego j:listajuegos) {
+			if (!listadoeditores.contains(j.getEditor())){
+				listadoeditores.add(j.getEditor());
+			}
+		}
+		return listadoeditores;
+	}
+	
+	
+	
 
 	@Override
 	public ArrayList<Juego> cargar_datos(String ruta_fichero) {
@@ -65,4 +79,6 @@ public class JuegoDatos implements IJuegoDatos {
 
 		return listajuegos;
 	}
+
+	
 }

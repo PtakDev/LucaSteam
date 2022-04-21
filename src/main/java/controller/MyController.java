@@ -22,6 +22,8 @@ public class MyController {
 				System.out.println("1 - Listado de todos los juegos");
 				System.out.println("2 - Listado de todos los juegos de genero plataforma");
 				System.out.println("3 - Añadir un juego");
+				
+				System.out.println("6 - Listado de todos los editores");
 				opcion = sc.nextInt();
 				switch (opcion) {
 				case 0:
@@ -64,6 +66,10 @@ public class MyController {
 				
 					//juegosService.anadir_juego(juego);
 					
+					break;
+					
+				case 6:
+					juegosService.printListadoEditores();
 					break;
 				default:
 					System.out.println("Opcion incorrecta. Marca una nueva opcion.");
