@@ -21,9 +21,11 @@ public class MyController {
 				System.out.println("Elige una opcion:");
 				System.out.println("1 - Listado de todos los juegos");
 				System.out.println("2 - Listado de todos los juegos de genero plataforma");
-				System.out.println("3 - Añadir un juego");
+				System.out.println("3 - AÃ±adir un juego");
+        System.out.println("4 - Listado de todos los juegos por publisher Nintendo");
 				
 				System.out.println("6 - Listado de todos los editores");
+
 				opcion = sc.nextInt();
 				switch (opcion) {
 				case 0:
@@ -45,12 +47,12 @@ public class MyController {
 					Juego juego = new Juego();
 					// Automaticamente le pongo el ultimo rango
 					juego.setRango(juegosService.anadir_juego().size() + 1);
-					System.out.println("¿Que nombre quieres ponerle? ");
+					System.out.println("Â¿Que nombre quieres ponerle? ");
 					sc.nextLine();
 					juego.setNombre(sc.nextLine());
-					System.out.println("¿Para que plataforma es? ");
+					System.out.println("Â¿Para que plataforma es? ");
 					juego.setPlataforma(sc.nextLine());
-					System.out.println("¿En que año se publico? ");
+					System.out.println("Â¿En que aÃ±o se publico? ");
 					try {
 						juego.setAnio(sc.nextInt());
 					} catch (InputMismatchException e) {
@@ -58,18 +60,23 @@ public class MyController {
 						sc.nextLine();
 					}
 					sc.nextLine();
-					System.out.println("¿De que genero es? ");
+					System.out.println("Â¿De que genero es? ");
 					juego.setGenero(sc.nextLine());
-					System.out.println("¿Cual es el editor? ");
+					System.out.println("Â¿Cual es el editor? ");
 					juego.setEditor(sc.nextLine());
 					juegosService.anadir_juego().add(juego);
 				
 					//juegosService.anadir_juego(juego);
 					
 					break;
-					
-				case 6:
-					juegosService.printListadoEditores();
+				case 4:
+					for (Juego j : juegosService.listar_juegos_pub_Nintendo()) {
+						if (j.getEditor().equals("Nintendo")) {
+							System.out.println(j);
+						}
+					}
+        case 6:
+					 juegosService.printListadoEditores();
 					break;
 				default:
 					System.out.println("Opcion incorrecta. Marca una nueva opcion.");
