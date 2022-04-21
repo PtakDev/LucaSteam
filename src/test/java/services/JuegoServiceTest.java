@@ -20,7 +20,6 @@ import main.java.modelo.Juego;
 public class JuegoServiceTest {
 
 	IJuegoDatos juegoDatos = new JuegoDatos();
-	ArrayList<Juego> listajuegos = new ArrayList<Juego>();
 	Juego juego = new Juego();
 	
 	//TESTS DEL METODO CARGAR DE FICHERO
@@ -74,7 +73,7 @@ public class JuegoServiceTest {
 
 	@Test
 	public void testlistar_todos_juegos() {
-		for (Juego j : listajuegos) {
+		for (Juego j : juegoDatos.listar_todos_juegos()) {
 			Assert.assertNotNull("No hay valor NULL", j);
 		}
 
@@ -90,8 +89,8 @@ public class JuegoServiceTest {
 	@Test
 	public void test_anadir_juego_malrango() {
 		Juego juego = new Juego();
-		// Le añado un rango menor al total del listado para asegurar que de error
-		juego.setRango(listajuegos.size() - 1);
+		// Le aÃ±ado un rango menor al total del listado para asegurar que de error
+		juego.setRango(juegoDatos.listar_todos_juegos().size() - 1);
 		juego.setNombre("Forza Motorsport 3");
 		juego.setPlataforma("PC");
 		juego.setAnio(2020);
@@ -111,6 +110,20 @@ public class JuegoServiceTest {
 	public void test_nombre_juego() {
 		juego.setNombre("Antonio");
 		Assert.assertEquals(juego.getNombre(), "Antonio");
+	}
+	
+	@Test
+	public void test_comprobar_anios() {
+		boolean comprobar=true;
+		 
+		for (Juego game: juegoDatos.listado_juegos_aniospares()) {//given
+			if(game.getAnio() %2!=0) {//when
+				comprobar=false;
+			}
+		
+		}
+		Assert.assertTrue(comprobar);//then
+		
 	}
 
 	@Test
