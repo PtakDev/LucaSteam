@@ -1,19 +1,17 @@
 package main.java.controller;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import main.java.datos.JuegoDatos;
-import main.java.interfaces.IJuegoService;
 import main.java.modelo.Juego;
 import main.java.services.JuegoService;
 
 public class MyController {
- 
-	JuegoDatos juegosdatos=new JuegoDatos();
-	IJuegoService juegoservice = new JuegoService();
+
+	JuegoService juegosService = new JuegoService();
+
 	public void menu() {
-		juegosdatos.recoger_datos();
+		//Recogo datos
+		juegosService.recoger_datos();
 		
 		boolean seguir = true;
 		int opcion = 0;
@@ -29,13 +27,42 @@ public class MyController {
 					seguir = false;
 					break;
 				case 1:
-					juegoservice.listar_todos_juegos();
+					for (Juego j : juegosService.listar_todos_juegos()) {
+						System.out.println(j);
+					}
 					break;
 				case 2:
-					juegoservice.listar_juegos_genero_plataforma();
+//					for (Juego game : juegosdatos.listar_juegos_genero_plataforma()) {
+//						if (game.getGenero().equals("Platform")) {
+//							System.out.println(game);
+//						}
+//					}
 					break;
 				case 3:
-					juegoservice.anadir_juego(sc);
+//					Juego juego = new Juego();
+//					// Automaticamente le pongo el ultimo rango
+//					juego.setRango(juegosdatos.anadir_juego().size() + 1);
+//					System.out.println("¿Que nombre quieres ponerle? ");
+//					sc.nextLine();
+//					juego.setNombre(sc.nextLine());
+//					System.out.println("¿Para que plataforma es? ");
+//					juego.setPlataforma(sc.nextLine());
+//					System.out.println("¿En que año se publico? ");
+//					try {
+//						juego.setAnio(sc.nextInt());
+//					} catch (InputMismatchException e) {
+//						System.err.println("Solo aceptamos numeros");
+//						sc.nextLine();
+//					}
+//					sc.nextLine();
+//					System.out.println("¿De que genero es? ");
+//					juego.setGenero(sc.nextLine());
+//					System.out.println("¿Cual es el editor? ");
+//					juego.setEditor(sc.nextLine());
+//					juegosdatos.anadir_juego().add(juego);
+//					///////////////////////////////
+//					juegosdatos.anadir_juego(juego);
+//					
 					break;
 				default:
 					System.out.println("Opcion incorrecta. Marca una nueva opcion.");
@@ -43,6 +70,5 @@ public class MyController {
 			}
 		}
 	}
-	
-}
 
+}
