@@ -1,6 +1,5 @@
 package main.java.controller;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import main.java.modelo.Juego;
@@ -11,7 +10,7 @@ public class MyController {
 	JuegoService juegosService = new JuegoService();
 
 	public void menu() {
-		// Recogo datos
+		// Recojo datos
 		juegosService.recoger_datos();
 
 		boolean seguir = true;
@@ -26,7 +25,7 @@ public class MyController {
 				System.out.println("7 - Listar todos los juegos del siglo XX");
 				System.out.println("8 - Listar todos los juegos por genero");
 				System.out.println("9 - Listar todos los juegos por anios pares");
-				System.out.println("11 - Añadir un juego");
+				System.out.println("11 - Aniadir un juego");
 				System.out.println("12 - Editar un juego");
 				System.out.println("13 - Eliminar un juego");
 				opcion = sc.nextInt();
