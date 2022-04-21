@@ -74,6 +74,7 @@ public class JuegoDatos implements IJuegoDatos {
 	}
 	
 	@Override
+	//Metodo implementado para test. Es de sobrecarga
 	public ArrayList<Juego> listar_juegos_genero(String genero) {
 		ArrayList<Juego> listajuegosgener = new ArrayList<Juego>();
 		for (Juego game : listajuegos) {

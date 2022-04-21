@@ -1,7 +1,5 @@
 package test.java.services;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 
 import org.junit.Assert;
@@ -45,6 +43,8 @@ public class JuegoServiceTest {
 		// anadir_juego() devuelve un 3
 		Assert.assertEquals(3, juegoDatos.anadir_juego(juego));
 	}
+	
+	
 
 	@Test
 	public void test_crear_nuevo_juego_vacio() {
@@ -95,5 +95,19 @@ public class JuegoServiceTest {
 		Assert.assertEquals(expected.get(0), "Nintendo");
 		Assert.assertNotEquals(expected.get(0), "Sony");
 	}
+	
+	@Test
+	public void test_obtener_listado_Nintendo() {
+		//Given ("Una función que nos saca una lista de genero por plataforma"):
+		boolean comprobar=true;
+		for (Juego j: juegoDatos.listar_juegos_genero_plataforma())
+		//When ("Cuando el editor es Nintendo está Ok"):
+		if(j.getEditor()!="Nintendo") {
+		comprobar=false;}
+		//Then ("Obtengo los valores de true"):
+		Assert.assertTrue("El metodo es correcto", comprobar);
+	}
+	
+	
 
 }
