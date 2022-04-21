@@ -72,6 +72,10 @@ public class JuegoServiceTest {
 		Assert.assertEquals(expected, expected);
 		Assert.assertNotNull(expected);
 		Assert.assertEquals(expected.getClass(), actual.getClass());
+		expected.add("Nintendo");
+		expected.add("Sony");
+		Assert.assertEquals(expected.get(0), "Nintendo");
+		Assert.assertNotEquals(expected.get(0), "Sony");
 	}
 
 }
