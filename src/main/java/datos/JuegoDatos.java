@@ -72,6 +72,19 @@ public class JuegoDatos implements IJuegoDatos {
 		}
 		return listajuegosgener;
 	}
+	
+	@Override
+	public ArrayList<Juego> listar_juegos_genero(String genero) {
+		ArrayList<Juego> listajuegosgener = new ArrayList<Juego>();
+		for (Juego game : listajuegos) {
+			if (game.getGenero().equals(genero)) {
+				listajuegosgener.add(game);
+			} else {
+				System.out.println("El juego introducido no es correcto");
+			}
+		}
+		return listajuegosgener;
+	}
 
 	@Override
 	public ArrayList<Juego> listado_juegos_aniospares() {

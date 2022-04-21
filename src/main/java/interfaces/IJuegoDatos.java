@@ -32,4 +32,6 @@ public interface IJuegoDatos {
 	public boolean eliminar_juego(Scanner sc);
 
 	ArrayList<Juego> listar_juegos_genero(Scanner sc);
+
+	ArrayList<Juego> listar_juegos_genero(String genero);
 }

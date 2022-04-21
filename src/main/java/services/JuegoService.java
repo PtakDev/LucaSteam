@@ -7,7 +7,7 @@ import main.java.datos.JuegoDatos;
 import main.java.interfaces.IJuegoDatos;
 import main.java.modelo.Juego;
 
-public class JuegoService {
+public class JuegoService extends IJuegoService {
 
 	IJuegoDatos juegodatos = new JuegoDatos();// Crear una instancia de la clase JuegoDatos
 
