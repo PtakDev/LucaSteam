@@ -16,7 +16,9 @@ public interface IJuegoDatos {
 	public ArrayList<Juego> listar_todos_juegos();
 
 	public ArrayList<Juego> cargar_datos(String ruta_fichero);
-
+	public ArrayList<Juego> listado_juego_sigloXX();
+	public ArrayList<Juego> listado_juegos_aniospares();
+	public ArrayList<Juego> listar_juegos_genero();
 	public ArrayList<Juego> getListajuegos();
 	public ArrayList<String> listadoEditores();
 

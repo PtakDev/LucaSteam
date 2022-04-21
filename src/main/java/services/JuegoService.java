@@ -27,6 +27,18 @@ public class JuegoService {
 		return juegodatos.anadir_juego();
 	}
 
+	public ArrayList<Juego> listado_juego_sigloXX() {
+		return juegodatos.listado_juego_sigloXX();
+	}
+	
+	public ArrayList<Juego> listado_juegos_aniospares() {
+		return juegodatos.listado_juegos_aniospares();
+	}
+	
+	public ArrayList<Juego> listar_juegos_genero(){
+		return juegodatos.listar_juegos_genero();
+	}
+
 	public void printListadoEditores(){
 		System.out.println(juegodatos.listadoEditores());
 	}
