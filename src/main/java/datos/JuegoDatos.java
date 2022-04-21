@@ -59,7 +59,13 @@ public class JuegoDatos implements IJuegoDatos {
 
 	@Override
 	public ArrayList<Juego> listado_juegos_aniospares() {
-		return listajuegos;
+		ArrayList<Juego> listajuegospares = new ArrayList<Juego>();
+		for (Juego game : listajuegos) {
+			if (game.getAnio() % 2 == 0) {
+				listajuegospares.add(game);
+			}
+		}
+		return listajuegospares;
 	}
 
 	public ArrayList<String> listadoEditores() {

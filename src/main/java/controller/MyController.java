@@ -72,11 +72,7 @@ public class MyController {
 					}
 					break;
 				case 9:
-					for (Juego game : juegosService.listado_juegos_aniospares()) {
-						if (game.getAnio() % 2 == 0) {
-							System.out.println(game);
-						}
-					}
+					juegosService.listado_juegos_aniospares();
 				case 11:
 					juegosService.anadir_juego(sc);
 					break;
