@@ -28,7 +28,7 @@ public class JuegoService {
 	}
 
 	public void printListadoEditores(){
-		System.out.println(juegodatos.getListadoEditores());
+		System.out.println(juegodatos.listadoEditores());
 	}
 
 	public ArrayList<Juego> listar_juegos_pub_Nintendo() {
