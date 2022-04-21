@@ -7,7 +7,7 @@ import main.java.services.JuegoService;
 
 public class MyController {
 
-	JuegoService juegosService = new JuegoService();
+	private JuegoService juegosService = new JuegoService();
 
 	public void menu() {
 		// Recojo datos
@@ -28,6 +28,7 @@ public class MyController {
 				System.out.println("8 - Añadir un juego");
 				System.out.println("9 - Editar un juego");
 				System.out.println("10 - Eliminar un juego");
+
 				opcion = sc.nextInt();
 				switch (opcion) {
 				case 0:
@@ -42,6 +43,7 @@ public class MyController {
 				case 3:
 					juegosService.listar_juegos_pub_Nintendo();
 					break;
+         
 				case 4:
 					juegosService.printListadoEditores();
 					break;
@@ -50,6 +52,7 @@ public class MyController {
           break;
 				case 6:
 					juegosService.listar_juegos_genero(sc);
+
 					break;
 				case 7:
 					juegosService.listado_juegos_aniospares();
@@ -61,9 +64,11 @@ public class MyController {
 					break;
 				case 10:
 					juegosService.eliminar_juego(sc);
-					break;
 				default:
 					System.out.println("Opcion incorrecta. Marca una nueva opcion.");
 				}
 			}
 		}
+	}
+}
+

@@ -17,10 +17,11 @@ public class JuegoService implements IJuegoService {
 	}
 
 	public void listar_todos_juegos() {
+
 		for (Juego j : juegodatos.listar_todos_juegos()) {
 			System.out.println(j);
 		}
-	}
+
 
 	public void listar_juegos_genero_plataforma() {
 		for(Juego game:juegodatos.listar_juegos_genero_plataforma()) {

@@ -13,7 +13,7 @@ import main.java.modelo.Juego;
 public class JuegoDatos implements IJuegoDatos {
 
 	public ArrayList<Juego> listajuegos = new ArrayList<Juego>();
-	public ArrayList<String> listadoeditores = new ArrayList<String>();
+	 
 
 	@Override
 	public ArrayList<Juego> cargar_datos(String ruta_fichero) {
@@ -56,8 +56,19 @@ public class JuegoDatos implements IJuegoDatos {
 			listajuegostotal.add(j);
 		}
 		return listajuegostotal;
-	}
+
   
+	public ArrayList<String> listadoEditores() {
+		ArrayList<String> listadoeditores = new ArrayList<String>();
+		for (Juego j : listajuegos) {
+			if (!listadoeditores.contains(j.getEditor())) {
+				listadoeditores.add(j.getEditor());
+			}
+		}
+		return listadoeditores;
+	}
+
+	
   @Override
   public ArrayList<Juego> listado_juego_sigloXX() {
 		ArrayList<Juego> listajuegossigoxx = new ArrayList<Juego>();
@@ -110,6 +121,7 @@ public class JuegoDatos implements IJuegoDatos {
 		return listajuegospares;
 	}
 
+
 	@Override
 	public ArrayList<String> listadoEditores() {
 		for (Juego j : listajuegos) {
@@ -148,6 +160,7 @@ public class JuegoDatos implements IJuegoDatos {
 			sc.nextLine();
 		}
 		sc.nextLine();
+
 		System.out.println("¿De que genero es? ");
 		juego.setGenero(sc.nextLine());
 		System.out.println("¿Cual es el editor? ");
@@ -173,6 +186,7 @@ public class JuegoDatos implements IJuegoDatos {
 		if (buscar_juego(nombre) != null) {
 			Juego juego = buscar_juego(nombre);
 			System.out.println("¿Que nombre va a tener ahora? ");
+
 			juego.setNombre(sc.nextLine());
 			return true;
 		} else
