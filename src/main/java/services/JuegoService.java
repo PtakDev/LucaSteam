@@ -16,8 +16,8 @@ public class JuegoService {
 		juegodatos.cargar_datos(".\\datos\\vgsales.csv");
 	}
 
-	public ArrayList<Juego> listar_todos_juegos() {
-		return juegodatos.listar_todos_juegos();
+	public void listar_todos_juegos() {
+		juegodatos.listar_todos_juegos();
 	}
 
 	public ArrayList<Juego> listar_juegos_genero_plataforma() {
