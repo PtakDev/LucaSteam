@@ -13,8 +13,6 @@ public interface IJuegoDatos {
 
 	public ArrayList<Juego> listar_todos_juegos();
 
-	public ArrayList<Juego> listar_juegos_genero();
-
 	public ArrayList<Juego> listado_juegos_aniospares();
 
 	public ArrayList<Juego> listado_juego_sigloXX();
@@ -32,4 +30,8 @@ public interface IJuegoDatos {
 	public boolean editar_juego(Scanner sc);
 
 	public boolean eliminar_juego(Scanner sc);
+
+	ArrayList<Juego> listar_juegos_genero(Scanner sc);
+
+	ArrayList<Juego> listar_juegos_genero(String genero);
 }
