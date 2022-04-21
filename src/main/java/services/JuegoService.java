@@ -16,7 +16,7 @@ public class JuegoService {
 	}
 
 	public ArrayList<Juego> listar_todos_juegos() {
-		return juegodatos.getListajuegos();
+		return juegodatos.listar_todos_juegos();
 	}
 
 	public ArrayList<Juego> listar_juegos_genero_plataforma() {
@@ -26,5 +26,16 @@ public class JuegoService {
 	public ArrayList<Juego> anadir_juego() {
 		return juegodatos.anadir_juego();
 	}
-
+	
+	public ArrayList<Juego> listado_juego_sigloXX() {
+		return juegodatos.listado_juego_sigloXX();
+	}
+	
+	public ArrayList<Juego> listado_juegos_aniospares() {
+		return juegodatos.listado_juegos_aniospares();
+	}
+	
+	public ArrayList<Juego> listar_juegos_genero(){
+		return juegodatos.listar_juegos_genero();
+	}
 }

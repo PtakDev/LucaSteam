@@ -17,10 +17,6 @@ public class JuegoDatos implements IJuegoDatos {
 		return listajuegos;
 	}
 
-	public ArrayList<Juego> getListajuegos() {
-		return listajuegos;
-	}
-
 	@Override
 	public boolean anadir_juego(Juego juego) {
 		if (juego == null)
@@ -40,6 +36,21 @@ public class JuegoDatos implements IJuegoDatos {
 
 	@Override
 	public ArrayList<Juego> listar_todos_juegos() {
+		return listajuegos;
+	}
+	
+	@Override
+	public ArrayList<Juego> listado_juego_sigloXX() {
+		return listajuegos;
+	}
+	
+	@Override
+	public ArrayList<Juego> listar_juegos_genero() {
+		return listajuegos;
+	}
+	
+	@Override
+	public ArrayList<Juego> listado_juegos_aniospares() {
 		return listajuegos;
 	}
 
@@ -65,4 +76,10 @@ public class JuegoDatos implements IJuegoDatos {
 
 		return listajuegos;
 	}
+
+	
+
+
+
+	
 }
