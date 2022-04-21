@@ -11,6 +11,7 @@ public interface IJuegoDatos {
 	public boolean anadir_juego(Juego juego);
 
 	public ArrayList<Juego> listar_juegos_genero_plataforma();
+	public ArrayList<Juego> listar_juegos_pub_Nintendo();
 
 	public ArrayList<Juego> listar_todos_juegos();
 
@@ -18,5 +19,7 @@ public interface IJuegoDatos {
 	public ArrayList<Juego> listado_juego_sigloXX();
 	public ArrayList<Juego> listado_juegos_aniospares();
 	public ArrayList<Juego> listar_juegos_genero();
-	
+	public ArrayList<Juego> getListajuegos();
+	public ArrayList<String> listadoEditores();
+
 }

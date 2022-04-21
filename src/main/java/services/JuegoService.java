@@ -26,7 +26,7 @@ public class JuegoService {
 	public ArrayList<Juego> anadir_juego() {
 		return juegodatos.anadir_juego();
 	}
-	
+
 	public ArrayList<Juego> listado_juego_sigloXX() {
 		return juegodatos.listado_juego_sigloXX();
 	}
@@ -38,4 +38,13 @@ public class JuegoService {
 	public ArrayList<Juego> listar_juegos_genero(){
 		return juegodatos.listar_juegos_genero();
 	}
+
+	public void printListadoEditores(){
+		System.out.println(juegodatos.listadoEditores());
+	}
+
+	public ArrayList<Juego> listar_juegos_pub_Nintendo() {
+		return juegodatos.listar_juegos_pub_Nintendo();
+	}
+
 }

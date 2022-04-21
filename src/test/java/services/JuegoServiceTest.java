@@ -63,5 +63,10 @@ public class JuegoServiceTest {
 		Assert.assertEquals(juego.getNombre(), null);
 	}
 	
+	@Test
+	public void test_editor_juego() {
+		juego.setNombre("Antonio");
+		Assert.assertEquals(juego.getNombre().equals("Nintendo"), "Nintendo");
+	}
 
 }

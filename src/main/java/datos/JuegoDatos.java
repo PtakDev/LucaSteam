@@ -11,6 +11,7 @@ import main.java.modelo.Juego;
 public class JuegoDatos implements IJuegoDatos {
 
 	public ArrayList<Juego> listajuegos = new ArrayList<Juego>();
+	public ArrayList<String> listadoeditores = new ArrayList<String>();
 
 	@Override
 	public ArrayList<Juego> anadir_juego() {
@@ -39,7 +40,7 @@ public class JuegoDatos implements IJuegoDatos {
 		return listajuegos;
 	}
 	
-	@Override
+
 	public ArrayList<Juego> listado_juego_sigloXX() {
 		return listajuegos;
 	}
@@ -51,6 +52,19 @@ public class JuegoDatos implements IJuegoDatos {
 	
 	@Override
 	public ArrayList<Juego> listado_juegos_aniospares() {
+		return listajuegos;
+	}
+
+	public ArrayList<String> listadoEditores() {
+		for(Juego j:listajuegos) {
+			if (!listadoeditores.contains(j.getEditor())){
+				listadoeditores.add(j.getEditor());
+			}
+		}
+		return listadoeditores;
+	}
+	
+	public ArrayList<Juego> listar_juegos_pub_Nintendo() {
 		return listajuegos;
 	}
 
@@ -77,9 +91,4 @@ public class JuegoDatos implements IJuegoDatos {
 		return listajuegos;
 	}
 
-	
-
-
-
-	
 }
