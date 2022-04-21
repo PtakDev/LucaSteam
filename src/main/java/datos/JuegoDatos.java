@@ -48,20 +48,6 @@ public class JuegoDatos implements IJuegoDatos {
 		return listajuegos;
 	}
 
-	public ArrayList<Juego> listado_juego_sigloXX() {
-		return listajuegos;
-	}
-
-	@Override
-	public ArrayList<Juego> listar_juegos_genero() {
-		return listajuegos;
-	}
-
-	@Override
-	public ArrayList<Juego> listado_juegos_aniospares() {
-		return listajuegos;
-	}
-
 	public ArrayList<String> listadoEditores() {
 		for (Juego j : listajuegos) {
 			if (!listadoeditores.contains(j.getEditor())) {
@@ -74,34 +60,21 @@ public class JuegoDatos implements IJuegoDatos {
 	public ArrayList<Juego> listar_juegos_pub_Nintendo() {
 		return listajuegos;
 	}
-	
 
 	public ArrayList<Juego> listado_juego_sigloXX() {
 		return listajuegos;
 	}
-	
+
 	@Override
 	public ArrayList<Juego> listar_juegos_genero() {
 		return listajuegos;
 	}
-	
+
 	@Override
 	public ArrayList<Juego> listado_juegos_aniospares() {
 		return listajuegos;
 	}
 
-	public ArrayList<String> listadoEditores() {
-		for(Juego j:listajuegos) {
-			if (!listadoeditores.contains(j.getEditor())){
-				listadoeditores.add(j.getEditor());
-			}
-		}
-		return listadoeditores;
-	}
-	
-	public ArrayList<Juego> listar_juegos_pub_Nintendo() {
-		return listajuegos;
-	}
 
 	@Override
 	public Juego crear_juego(Scanner sc) {
@@ -177,6 +150,5 @@ public class JuegoDatos implements IJuegoDatos {
 			return true;
 		}
 	}
-
 
 }
