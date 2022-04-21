@@ -40,7 +40,13 @@ public class JuegoDatos implements IJuegoDatos {
 
 	@Override
 	public ArrayList<Juego> listar_juegos_genero_plataforma() {
-		return listajuegos;
+		ArrayList<Juego> listajuegosplataforma = new ArrayList<Juego>();
+		for (Juego game : listajuegos) {
+			if (game.getGenero().equals("Platform")) {
+				listajuegosplataforma.add(game);
+			}
+		}
+		return listajuegosplataforma;
 	}
 
 	@Override
@@ -51,16 +57,22 @@ public class JuegoDatos implements IJuegoDatos {
 		}
 		return listajuegostotal;
 	}
-
-	public ArrayList<Juego> listado_juego_sigloXX() {
-		return listajuegos;
-	} 
-	
+  
+  @Override
+  public ArrayList<Juego> listado_juego_sigloXX() {
+		ArrayList<Juego> listajuegossigoxx = new ArrayList<Juego>();
+		for (Juego game : listajuegos) {
+			if (game.getAnio() > 1899 && game.getAnio() < 2000) {
+				listajuegossigoxx.add(game);
+			}
+		}
+		return listajuegossigoxx;
+	}
 
 	@Override
 	public ArrayList<Juego> listar_juegos_genero(Scanner sc) {
 		ArrayList<Juego> listajuegosgener = new ArrayList<Juego>();
-		System.out.println("¿Que genero quieres? ");
+		System.out.println("Â¿Que genero quieres? ");
 		sc.nextLine();
 		String tipo = sc.nextLine();
 		for (Juego game : listajuegos) {
@@ -123,12 +135,12 @@ public class JuegoDatos implements IJuegoDatos {
 	public Juego crear_juego(Scanner sc) {
 		Juego juego = new Juego();
 		juego.setRango(listajuegos.size() + 1);
-		System.out.println("¿Que nombre quieres ponerle? ");
+		System.out.println("Â¿Que nombre quieres ponerle? ");
 		sc.nextLine();
 		juego.setNombre(sc.nextLine());
-		System.out.println("¿Para que plataforma es? ");
+		System.out.println("Â¿Para que plataforma es? ");
 		juego.setPlataforma(sc.nextLine());
-		System.out.println("¿En que año se publico? ");
+		System.out.println("Â¿En que aÃ±o se publico? ");
 		try {
 			juego.setAnio(sc.nextInt());
 		} catch (InputMismatchException e) {
@@ -136,9 +148,9 @@ public class JuegoDatos implements IJuegoDatos {
 			sc.nextLine();
 		}
 		sc.nextLine();
-		System.out.println("¿De que genero es? ");
+		System.out.println("Â¿De que genero es? ");
 		juego.setGenero(sc.nextLine());
-		System.out.println("¿Cual es el editor? ");
+		System.out.println("Â¿Cual es el editor? ");
 		juego.setEditor(sc.nextLine());
 		return juego;
 	}
@@ -156,11 +168,11 @@ public class JuegoDatos implements IJuegoDatos {
 	@Override
 	public boolean editar_juego(Scanner sc) {
 		sc.nextLine();
-		System.out.println("¿Que nombre tiene el juego? ");
+		System.out.println("Â¿Que nombre tiene el juego? ");
 		String nombre = sc.nextLine();
 		if (buscar_juego(nombre) != null) {
 			Juego juego = buscar_juego(nombre);
-			System.out.println("¿Que nombre va a tener ahora? ");
+			System.out.println("Â¿Que nombre va a tener ahora? ");
 			juego.setNombre(sc.nextLine());
 			return true;
 		} else
@@ -171,7 +183,7 @@ public class JuegoDatos implements IJuegoDatos {
 	@Override
 	public boolean eliminar_juego(Scanner sc) {
 		sc.nextLine();
-		System.out.println("¿Que nombre tiene el juego? ");
+		System.out.println("Â¿Que nombre tiene el juego? ");
 		String nombre = sc.nextLine();
 		if (buscar_juego(nombre) != null) {
 			Juego juego = buscar_juego(nombre);

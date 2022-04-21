@@ -25,7 +25,7 @@ public class MyController {
 				System.out.println("5 - Listar todos los juegos del siglo XX");
 				System.out.println("6 - Listar todos los juegos por genero");
 				System.out.println("7 - Listar todos los juegos por anios pares");
-				System.out.println("8 - Añadir un juego");
+				System.out.println("8 - AÃ±adir un juego");
 				System.out.println("9 - Editar un juego");
 				System.out.println("10 - Eliminar un juego");
 				opcion = sc.nextInt();
@@ -37,11 +37,7 @@ public class MyController {
 					juegosService.listar_todos_juegos();
 					break;
 				case 2:
-					for (Juego game : juegosService.listar_juegos_genero_plataforma()) {
-						if (game.getGenero().equals("Platform")) {
-							System.out.println(game);
-						}
-					}
+					juegosService.listar_juegos_genero_plataforma();
 					break;
 				case 3:
 					juegosService.listar_juegos_pub_Nintendo();
@@ -50,18 +46,14 @@ public class MyController {
 					juegosService.printListadoEditores();
 					break;
 				case 5:
-					for (Juego game : juegosService.listado_juego_sigloXX()) {
-						if (game.getAnio() > 1899 && game.getAnio() < 2000) {
-							System.out.println(game);
-						}
-					}
-					break;
+					juegosService.listado_juego_sigloXX();
+          break;
 				case 6:
 					juegosService.listar_juegos_genero(sc);
 					break;
 				case 7:
 					juegosService.listado_juegos_aniospares();
-				case 8:
+			case 8:
 					juegosService.anadir_juego(sc);
 					break;
 				case 9:
@@ -75,6 +67,3 @@ public class MyController {
 				}
 			}
 		}
-	}
-
-}

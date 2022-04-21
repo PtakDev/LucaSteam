@@ -22,16 +22,24 @@ public class JuegoService implements IJuegoService {
 		}
 	}
 
-	public ArrayList<Juego> listar_juegos_genero_plataforma() {
-		return juegodatos.listar_juegos_genero_plataforma();
+	public void listar_juegos_genero_plataforma() {
+		for(Juego game:juegodatos.listar_juegos_genero_plataforma()) {
+			System.out.println(game);
+		}
+		
 	}
 	
-	public ArrayList<Juego> listado_juego_sigloXX() {
-		return juegodatos.listado_juego_sigloXX();
+	public void listado_juego_sigloXX() {
+		for(Juego game:juegodatos.listado_juego_sigloXX()) {
+			System.out.println(game);
+		}
+		
 	}
 	
-	public ArrayList<Juego> listado_juegos_aniospares() {
-		return juegodatos.listado_juegos_aniospares();
+	public void listado_juegos_aniospares() {
+		for(Juego game:juegodatos.listado_juegos_aniospares()) {
+			System.out.println(game);
+		}
 	}
 	
 	public void listar_juegos_genero(Scanner sc){
