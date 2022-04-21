@@ -1,7 +1,5 @@
 package test.java.services;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 
 import org.junit.Assert;
@@ -14,36 +12,15 @@ import main.java.modelo.Juego;
 public class JuegoServiceTest {
 
 	IJuegoDatos juegoDatos = new JuegoDatos();
+	ArrayList<Juego> listajuegos = new ArrayList<Juego>();
 	Juego juego = new Juego();
 
 	@Test
 	public void testlistar_todos_juegos() {
-		for (Juego j : juegoDatos.listar_todos_juegos()) {
+		for (Juego j : listajuegos) {
 			Assert.assertNotNull("No hay valor NULL", j);
 		}
 
-	}
-
-	@Test
-	public void test_anadir_juego_vacio() {
-		Juego juego = null;
-		// Si es igual a 2 significa que es nulo
-		Assert.assertEquals(2, juegoDatos.anadir_juego(juego));
-	}
-
-	@Test
-	public void test_anadir_juego_malrango() {
-		Juego juego = new Juego();
-		// Le añado un rango menor al total del listado para asegurar que de error
-		juego.setRango(juegoDatos.listar_todos_juegos().size() - 1);
-		juego.setNombre("Forza Motorsport 3");
-		juego.setPlataforma("PC");
-		juego.setAnio(2020);
-		juego.setGenero("Racing");
-		juego.setEditor("Mocosoft");
-		// Si el rango del juego no es el siguiente disponible del listado,
-		// anadir_juego() devuelve un 3
-		Assert.assertEquals(3, juegoDatos.anadir_juego(juego));
 	}
 
 	@Test
@@ -55,20 +32,6 @@ public class JuegoServiceTest {
 	public void test_nombre_juego() {
 		juego.setNombre("Antonio");
 		Assert.assertEquals(juego.getNombre(), "Antonio");
-	}
-	
-	@Test
-	public void test_comprobar_anios() {
-		boolean comprobar=true;
-		 
-		for (Juego game: juegoDatos.listado_juegos_aniospares()) {//given
-			if(game.getAnio() %2!=0) {//when
-				comprobar=false;
-			}
-		
-		}
-		Assert.assertTrue(comprobar);//then
-		
 	}
 
 	@Test
@@ -95,5 +58,38 @@ public class JuegoServiceTest {
 		Assert.assertEquals(expected.get(0), "Nintendo");
 		Assert.assertNotEquals(expected.get(0), "Sony");
 	}
-
+	
+	@Test
+	public void test_anadir_juego_existente() {
+		juegoDatos.cargar_datos(".\\\\datos\\\\vgsales.csv");
+		Assert.assertFalse("Deberia ser false cuando ingreso un juego que ya existe", juegoDatos.anadir_juego(juegoDatos.listar_todos_juegos().get(juegoDatos.listar_todos_juegos().size()-1)));
+	}
+	@Test
+	public void test_anadir_juego_noexistente() {
+		juegoDatos.cargar_datos(".\\\\datos\\\\vgsales.csv");
+		Juego juego = new Juego(juegoDatos.listar_todos_juegos().size()+1,"Test","PS",1996, "Platform", "Sony Computer Entertainment");
+		Assert.assertTrue("Deberia ser true cuando ingreso un juego que no existe", juegoDatos.anadir_juego(juego));
+	}
+	
+	@Test
+	public void test_editar_juego(){
+		juegoDatos.cargar_datos(".\\\\datos\\\\vgsales.csv");
+		Assert.assertTrue("El juego no se ha podido editar si salta este error. ",juegoDatos.editar_juego("Crash Bandicoot", "Pepe Remolinos"));
+	}
+	@Test
+	public void test_buscar_juego(){
+		juegoDatos.cargar_datos(".\\\\datos\\\\vgsales.csv");
+		Assert.assertNotNull("Si salta este error es que el juego sigue existiendo en el listado, por lo que no se ha editado el nombre. ",juegoDatos.buscar_juego("Crash Bandicoot"));
+	}
+	
+	@Test
+	public void test_eliminar_juego(){
+		juegoDatos.cargar_datos(".\\\\datos\\\\vgsales.csv");
+		Assert.assertTrue("El juego no se ha eliminado si salta este error. ",juegoDatos.eliminar_juego("Fallout 4"));
+	}
+	@Test
+	public void test_eliminar_juego2(){
+		juegoDatos.cargar_datos(".\\\\datos\\\\vgsales.csv");
+		Assert.assertNotNull("Si salta este error es que el juego sigue existiendo en el listado, por lo que no se ha eliminado correctamente. ",juegoDatos.buscar_juego("Fallout 4"));
+	}
 }

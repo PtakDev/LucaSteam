@@ -30,6 +30,16 @@ public interface IJuegoDatos {
 	public boolean anadir_juego(Juego juego);
 
 	public boolean editar_juego(Scanner sc);
+	
+	public boolean editar_juego(String nombre_antiguo, String nombre_nuevo);//For Tests
 
 	public boolean eliminar_juego(Scanner sc);
+	
+	public boolean eliminar_juego(String nombre);//For Tests
+
+	public Juego crear_juego(int rango, String nombre, String plataforma, int anio, String genero, String editor);
+	
+
+
+
 }

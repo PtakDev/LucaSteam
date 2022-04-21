@@ -37,14 +37,13 @@ public class JuegoDatos implements IJuegoDatos {
 
 		return listajuegos;
 	}
-
-	@Override
-	public ArrayList<Juego> listar_juegos_genero_plataforma() {
-		return listajuegos;
-	}
-
 	@Override
 	public ArrayList<Juego> listar_todos_juegos() {
+		return listajuegos;
+	}
+	
+	@Override
+	public ArrayList<Juego> listar_juegos_genero_plataforma() {
 		return listajuegos;
 	}
 
@@ -104,7 +103,17 @@ public class JuegoDatos implements IJuegoDatos {
 		juego.setEditor(sc.nextLine());
 		return juego;
 	}
-
+	@Override
+	public Juego crear_juego(int rango, String nombre, String plataforma,int anio, String genero, String editor) {
+		Juego juego = new Juego();
+		juego.setRango(rango);
+		juego.setNombre(nombre);
+		juego.setPlataforma(plataforma);
+		juego.setAnio(anio);
+		juego.setGenero(genero);
+		juego.setEditor(editor);
+		return juego;
+	}
 	@Override
 	public Juego buscar_juego(String nombre) {
 		for (Juego j : listajuegos) {
@@ -114,7 +123,18 @@ public class JuegoDatos implements IJuegoDatos {
 		}
 		return null;
 	}
-
+	
+	@Override
+	public boolean editar_juego(String nombre_antiguo, String nombre_nuevo) {//For tests
+		if (buscar_juego(nombre_antiguo) != null) {
+			Juego juego = buscar_juego(nombre_antiguo);
+			juego.setNombre(nombre_nuevo);
+			listajuegos.set(juego.getRango(), juego);
+			return true;
+		} else
+			return false;
+	}
+	
 	@Override
 	public boolean editar_juego(Scanner sc) {
 		sc.nextLine();
@@ -127,7 +147,6 @@ public class JuegoDatos implements IJuegoDatos {
 			return true;
 		} else
 			return false;
-
 	}
 
 	@Override
@@ -141,15 +160,22 @@ public class JuegoDatos implements IJuegoDatos {
 			return true;
 		} else
 			return false;
-
 	}
-
+	
+	@Override
+	public boolean eliminar_juego(String nombre) {//For tests
+		if (buscar_juego(nombre) != null) {
+			Juego juego = buscar_juego(nombre);
+			listajuegos.remove(juego);
+			return true;
+		} else
+			return false;
+	}
 	@Override
 	public boolean anadir_juego(Juego juego) {
-		if (juego == null)
+		if(buscar_juego(juego.getNombre()) != null) {
 			return false;
-		else if (juego.getRango() < listajuegos.size() + 1)
-			return false;
+		}
 		else {
 			listajuegos.add(juego);
 			return true;

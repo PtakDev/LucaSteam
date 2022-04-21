@@ -10,7 +10,6 @@ public class Juego {
 
 	public Juego() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Juego(int rango, String nombre, String plataforma, int anio, String genero, String editor) {
