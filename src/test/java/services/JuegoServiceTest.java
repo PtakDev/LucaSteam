@@ -10,13 +10,13 @@ import org.junit.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import main.java.interfaces.IJuegoService;
+import main.java.interfaces.IJuegoDatos;
 import main.java.modelo.Juego;
 import main.java.services.JuegoService;
 
 public class JuegoServiceTest {
 
-	IJuegoService juegoservice = new JuegoService();
+	IJuegoDatos juegoservice = new JuegoService();
 	ArrayList<Juego> listajuegos = new ArrayList<Juego>();
 	Juego juego = new Juego();
 	
