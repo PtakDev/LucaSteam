@@ -56,7 +56,7 @@ public class JuegoDatos implements IJuegoDatos {
 			listajuegostotal.add(j);
 		}
 		return listajuegostotal;
-
+	}
   
 	public ArrayList<String> listadoEditores() {
 		ArrayList<String> listadoeditores = new ArrayList<String>();
@@ -121,16 +121,6 @@ public class JuegoDatos implements IJuegoDatos {
 		return listajuegospares;
 	}
 
-
-	@Override
-	public ArrayList<String> listadoEditores() {
-		for (Juego j : listajuegos) {
-			if (!listadoeditores.contains(j.getEditor())) {
-				listadoeditores.add(j.getEditor());
-			}
-		}
-		return listadoeditores;
-	}
 
 	@Override
 	public ArrayList<Juego> listar_juegos_pub_Nintendo() {

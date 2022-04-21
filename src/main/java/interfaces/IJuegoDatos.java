@@ -13,7 +13,7 @@ public interface IJuegoDatos {
   
 	public ArrayList<Juego> listar_juegos_pub_Nintendo();
 
-	public void listar_todos_juegos();
+	public ArrayList<Juego> listar_todos_juegos();
 
 	public ArrayList<Juego> listado_juegos_aniospares();
 

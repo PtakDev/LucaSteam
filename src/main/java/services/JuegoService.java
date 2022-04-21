@@ -21,61 +21,60 @@ public class JuegoService implements IJuegoService {
 		for (Juego j : juegodatos.listar_todos_juegos()) {
 			System.out.println(j);
 		}
-
+	}
 
 	public void listar_juegos_genero_plataforma() {
-		for(Juego game:juegodatos.listar_juegos_genero_plataforma()) {
+		for (Juego game : juegodatos.listar_juegos_genero_plataforma()) {
 			System.out.println(game);
 		}
-		
+
 	}
-	
+
 	public void listado_juego_sigloXX() {
-		for(Juego game:juegodatos.listado_juego_sigloXX()) {
+		for (Juego game : juegodatos.listado_juego_sigloXX()) {
 			System.out.println(game);
 		}
-		
+
 	}
-	
+
 	public void listado_juegos_aniospares() {
-		for(Juego game:juegodatos.listado_juegos_aniospares()) {
+		for (Juego game : juegodatos.listado_juegos_aniospares()) {
 			System.out.println(game);
 		}
 	}
-	
-	public void listar_juegos_genero(Scanner sc){
+
+	public void listar_juegos_genero(Scanner sc) {
 		for (Juego j : juegodatos.listar_juegos_genero(sc)) {
 			System.out.println(j);
 		}
 	}
 
-	public void printListadoEditores(){
+	public void printListadoEditores() {
 		System.out.println(juegodatos.listadoEditores());
 	}
 
 	public void listar_juegos_pub_Nintendo() {
 		for (Juego j : juegodatos.listar_juegos_pub_Nintendo()) {
-			System.out.println(j);}
+			System.out.println(j);
 		}
-	
+	}
+
 	public boolean anadir_juego(Scanner sc) {
 		return juegodatos.anadir_juego(juegodatos.crear_juego(sc));
 	}
-	
+
 	public void editar_juego(Scanner sc) {
-		if(juegodatos.editar_juego(sc)==true) {
+		if (juegodatos.editar_juego(sc) == true) {
 			System.out.println("Juego editado con exito ");
-		}
-		else
+		} else
 			System.out.println("No se pudo editar el juego ");
 	}
-	
+
 	public void eliminar_juego(Scanner sc) {
-		if(juegodatos.eliminar_juego(sc)==true) {
+		if (juegodatos.eliminar_juego(sc) == true) {
 			System.out.println("Juego eliminado con exito ");
-		}
-		else
+		} else
 			System.out.println("No se pudo eliminar el juego ");
 	}
-	
+
 }
