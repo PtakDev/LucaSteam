@@ -41,7 +41,7 @@ public class JuegoDatos implements IJuegoDatos {
 	}
 	
 	@Override
-	public ArrayList<String> getListadoEditores() {
+	public ArrayList<String> listadoEditores() {
 		for(Juego j:listajuegos) {
 			if (!listadoeditores.contains(j.getEditor())){
 				listadoeditores.add(j.getEditor());
