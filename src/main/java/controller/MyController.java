@@ -8,7 +8,7 @@ import main.java.services.JuegoService;
 
 public class MyController {
 
-	JuegoService juegosService = new JuegoService();
+	private JuegoService juegosService = new JuegoService();
 
 	public void menu() {
 		// Recogo datos
@@ -26,9 +26,10 @@ public class MyController {
 				System.out.println("7 - Listar todos los juegos del siglo XX");
 				System.out.println("8 - Listar todos los juegos por genero");
 				System.out.println("9 - Listar todos los juegos por anios pares");
-				System.out.println("11 - Añadir un juego");
+				System.out.println("11 - Anadir un juego");
 				System.out.println("12 - Editar un juego");
 				System.out.println("13 - Eliminar un juego");
+
 				opcion = sc.nextInt();
 				switch (opcion) {
 				case 0:
@@ -46,11 +47,13 @@ public class MyController {
 						}
 					}
 					break;
+         
 				case 4:
 					for (Juego j : juegosService.listar_juegos_pub_Nintendo()) {
 						if (j.getEditor().equals("Nintendo")) {
 							System.out.println(j);
 						}
+
 					}
 				case 6:
 					juegosService.printListadoEditores();
@@ -63,7 +66,7 @@ public class MyController {
 					}
 					break;
 				case 8:
-					System.out.println("¿Que genero quieres? ");
+					System.out.println("Que genero quieres? ");
 					sc.nextLine();
 					String tipo = sc.nextLine();
 					for (Juego game : juegosService.listar_juegos_genero()) {
@@ -86,7 +89,6 @@ public class MyController {
 					break;
 				case 13:
 					juegosService.eliminar_juego(sc);
-					break;
 				default:
 					System.out.println("Opcion incorrecta. Marca una nueva opcion.");
 				}

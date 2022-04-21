@@ -1,22 +1,17 @@
 package test.java.services;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
 
+import main.java.datos.JuegoDatos;
 import main.java.interfaces.IJuegoDatos;
 import main.java.modelo.Juego;
-import main.java.services.JuegoService;
 
 public class JuegoServiceTest {
 
-	IJuegoDatos juegoservice = new JuegoService();
+	IJuegoDatos juegoDatos = new JuegoDatos();
 	ArrayList<Juego> listajuegos = new ArrayList<Juego>();
 	Juego juego = new Juego();
 	
@@ -31,7 +26,7 @@ public class JuegoServiceTest {
 	public void test_anadir_juego_vacio() {
 		Juego juego=null;
 		//Si es igual a 2 significa que es nulo
-		Assert.assertEquals(2, juegoservice.anadir_juego(juego));
+		Assert.assertEquals(2, juegoDatos.anadir_juego(juego));
 	}
 	@Test
 	public void test_anadir_juego_malrango() {
@@ -44,7 +39,7 @@ public class JuegoServiceTest {
 		juego.setGenero("Racing");
 		juego.setEditor("Mocosoft");
 		//Si el rango del juego no es el siguiente disponible del listado, anadir_juego() devuelve un 3
-		Assert.assertEquals(3, juegoservice.anadir_juego(juego));
+		Assert.assertEquals(3, juegoDatos.anadir_juego(juego));
 	}
 	@Test
 	public void test_crear_nuevo_juego_vacio() {
@@ -63,5 +58,24 @@ public class JuegoServiceTest {
 		Assert.assertEquals(juego.getNombre(), null);
 	}
 	
+	@Test
+	public void test_editor_juego() {
+		juego.setEditor("Nintendo");
+		Assert.assertEquals(juego.getEditor(), "Nintendo");
+	}
+	
+	
+	@Test
+	public void test_listado_editores_contiene() {
+		ArrayList<String> actual = new ArrayList<String>();
+		ArrayList<String> expected = juegoDatos.listadoEditores();
+		Assert.assertEquals(expected, expected);
+		Assert.assertNotNull(expected);
+		Assert.assertEquals(expected.getClass(), actual.getClass());
+		expected.add("Nintendo");
+		expected.add("Sony");
+		Assert.assertEquals(expected.get(0), "Nintendo");
+		Assert.assertNotEquals(expected.get(0), "Sony");
+	}
 
 }

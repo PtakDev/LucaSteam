@@ -40,6 +40,7 @@ public class JuegoService {
 		System.out.println(juegodatos.listadoEditores());
 	}
 
+
 	public ArrayList<Juego> listar_juegos_pub_Nintendo() {
 		return juegodatos.listar_juegos_pub_Nintendo();
 	}
