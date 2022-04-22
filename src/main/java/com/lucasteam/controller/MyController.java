@@ -17,7 +17,7 @@ public class MyController {
 		System.out.println("5 - Listar todos los juegos del siglo XX");
 		System.out.println("6 - Listar todos los juegos por genero");
 		System.out.println("7 - Listar todos los juegos por anios pares");
-		System.out.println("8 - A�adir un juego");
+		System.out.println("8 - Aniadir un juego");
 		System.out.println("9 - Editar un juego");
 		System.out.println("10 - Eliminar un juego");
 	}

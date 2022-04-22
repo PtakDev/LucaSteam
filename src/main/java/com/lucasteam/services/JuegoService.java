@@ -12,7 +12,7 @@ public class JuegoService {
 
 	public void recoger_datos() {
 		// Llamamos el metodo y carga los datos al array
-		juegodatos.cargar_datos(".\\datos\\vgsales.csv");
+		juegodatos.cargar_datos("./datos/vgsales.csv");
 	}
 
 	public void listar_todos_juegos() {
