@@ -13,8 +13,6 @@ public interface IJuegoDatos {
 
 	public ArrayList<Juego> listar_todos_juegos();
 
-	public ArrayList<Juego> listar_juegos_genero();
-
 	public ArrayList<Juego> listado_juegos_aniospares();
 
 	public ArrayList<Juego> listado_juego_sigloXX();
@@ -23,6 +21,10 @@ public interface IJuegoDatos {
 
 	public ArrayList<String> listadoEditores();
 
+	public ArrayList<Juego> listar_juegos_genero(Scanner sc);
+
+	public ArrayList<Juego> listar_juegos_genero(String genero);
+
 	public Juego crear_juego(Scanner sc);
 
 	public Juego buscar_juego(String nombre);
@@ -30,16 +32,13 @@ public interface IJuegoDatos {
 	public boolean anadir_juego(Juego juego);
 
 	public boolean editar_juego(Scanner sc);
-	
-	public boolean editar_juego(String nombre_antiguo, String nombre_nuevo);//For Tests
+
+	public boolean editar_juego(String nombre_antiguo, String nombre_nuevo);// For Tests
 
 	public boolean eliminar_juego(Scanner sc);
-	
-	public boolean eliminar_juego(String nombre);//For Tests
 
-	public Juego crear_juego(int rango, String nombre, String plataforma, int anio, String genero, String editor);
-	
+	public boolean eliminar_juego(String nombre);// For Tests
 
-
+	public Juego crear_juego(int rango, String nombre, String plataforma, int anio, String genero, String editor);// For Tests
 
 }

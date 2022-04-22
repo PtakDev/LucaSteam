@@ -13,7 +13,6 @@ import main.java.modelo.Juego;
 public class JuegoDatos implements IJuegoDatos {
 
 	public ArrayList<Juego> listajuegos = new ArrayList<Juego>();
-	public ArrayList<String> listadoeditores = new ArrayList<String>();
 
 	@Override
 	public ArrayList<Juego> cargar_datos(String ruta_fichero) {
@@ -39,23 +38,63 @@ public class JuegoDatos implements IJuegoDatos {
 	}
 	@Override
 	public ArrayList<Juego> listar_todos_juegos() {
-		return listajuegos;
+		ArrayList<Juego> listajuegostotal = new ArrayList<Juego>();
+		for (Juego j : listajuegos) {
+			listajuegostotal.add(j);
+		}
+		return listajuegostotal;
 	}
 	
 	@Override
 	public ArrayList<Juego> listar_juegos_genero_plataforma() {
-		return listajuegos;
+		ArrayList<Juego> listajuegosplataforma = new ArrayList<Juego>();
+		for (Juego game : listajuegos) {
+			if (game.getGenero().equals("Platform")) {
+				listajuegosplataforma.add(game);
+			}
+		}
+		return listajuegosplataforma;
 	}
 
 	public ArrayList<Juego> listado_juego_sigloXX() {
-		return listajuegos;
+		ArrayList<Juego> listajuegossigoxx = new ArrayList<Juego>();
+		for (Juego game : listajuegos) {
+			if (game.getAnio() > 1899 && game.getAnio() < 2000) {
+				listajuegossigoxx.add(game);
+			}
+		}
+		return listajuegossigoxx;
 	}
 
 	@Override
-	public ArrayList<Juego> listar_juegos_genero() {
-		return listajuegos;
+	public ArrayList<Juego> listar_juegos_genero(Scanner sc) {
+		ArrayList<Juego> listajuegosgener = new ArrayList<Juego>();
+		System.out.println("¿Que genero quieres? ");
+		sc.nextLine();
+		String tipo = sc.nextLine();
+		for (Juego game : listajuegos) {
+			if (game.getGenero().equals(tipo)) {
+				listajuegosgener.add(game);
+			} else {
+				System.out.println("El juego introducido no es correcto");
+			}
+		}
+		return listajuegosgener;
 	}
-
+	
+	@Override
+	//Metodo implementado para test. Es de sobrecarga
+	public ArrayList<Juego> listar_juegos_genero(String genero) {
+		ArrayList<Juego> listajuegosgener = new ArrayList<Juego>();
+		for (Juego game : listajuegos) {
+			if (game.getGenero().equals(genero)) {
+				listajuegosgener.add(game);
+			} else {
+				System.out.println("El juego introducido no es correcto");
+			}
+		}
+		return listajuegosgener;
+	}
 	@Override
 	public ArrayList<Juego> listado_juegos_aniospares() {
 		ArrayList<Juego> listajuegospares = new ArrayList<Juego>();
@@ -68,6 +107,7 @@ public class JuegoDatos implements IJuegoDatos {
 	}
 
 	public ArrayList<String> listadoEditores() {
+		ArrayList<String> listadoeditores = new ArrayList<String>();
 		for (Juego j : listajuegos) {
 			if (!listadoeditores.contains(j.getEditor())) {
 				listadoeditores.add(j.getEditor());
@@ -77,7 +117,13 @@ public class JuegoDatos implements IJuegoDatos {
 	}
 
 	public ArrayList<Juego> listar_juegos_pub_Nintendo() {
-		return listajuegos;
+		ArrayList<Juego> listajuegosNint = new ArrayList<Juego>();
+		for (Juego j : listajuegos) {
+			if (j.getEditor().equals("Nintendo")) {
+				listajuegosNint.add(j);
+			}
+		}
+		return listajuegosNint;
 	}
 
 	@Override
@@ -181,5 +227,4 @@ public class JuegoDatos implements IJuegoDatos {
 			return true;
 		}
 	}
-
 }
