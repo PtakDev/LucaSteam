@@ -1,0 +1,7 @@
+version: '3'
+services:
+    contenedor_videojuego:
+      container_name: contenedor_videojuego
+      build: .
+  
+    
